@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Date Trainer</title>
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<ul>
+		<li><a href="#link1">Date Gen</a></li>
+		<li><a href="#link2">Date Calc</a></li>
+		<li><a href="#link3">LTD Calc</a></li>
+</ul>
+
+<div style="padding:8px;margin-top:40px;">
+
+<label for="format">Date Format:</label>
+<select id="format">
+		<option value="US">04/30/1945</option>
+		<option value="UK">30/04/1945</option>
+		<option value="ISO">1945-04-30</option>
+		<option value="USfull">Apr 30 1945</option>
+		<option value="UKfull">30 Apr 1945</option>
+</select>
+</div>
+
+<div style="margin:8px;" id="link1">
+<h1>Date Genarator</h1>
+
+<form action="javascript:loopDays()">
+		<label for="start">Start Year: </label>
+		<input id="start" type="number" min="1" max="9999" value="1700"><br>
+		<label for="end">End Year: </label>
+		<input id="end" type="number" min="1" max="9999" value="2099"><br>
+		<label for="dates">Number of Dates: </label>
+		<input type="number" name="dates" id="dates" min="1" max="20" value="5"><br>
+		<button>Genarate Dates</button>
+</form>
+<br>
+<div id="dList"></div>
+</div>
+
+<div style="margin:8px;" id="link2">
+<h1>Date Calculator</h1>
+<form action="javascript:printDate()">
+<input type="Date" id="date" value="">
+<button>Calculate</button>
+</form>
+<p id="line1">Century Offset:</p>
+<p id="line2">LDT Offset:</p>
+<p id="line3">Doomsday:</p>
+<p id="line4">Is Leap Year:</p>
+<p id="line5">Day of week:</p>
+</div>
+
+
+<div style="margin:8px;" id="link3">
+<h1>LTD Offset Calculator</h1>
+
+<form action="javascript:getLtdOff()">
+		<label for="ltd">Last Two Digits of Year: </label>
+		<input id="ltd" type="number" min="0" max="99">
+		<button>Get LTD Offset</button>
+</form>
+<br>
+<div id="dList"></div>
+<p id="ltdOut"></p>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
